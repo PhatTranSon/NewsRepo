@@ -17,13 +17,6 @@ if __name__ == "__main__":
 
     # Run
     scraper.run()
-    """
-    url = "https://www.fox13now.com/news/local-news/wvc-police-to-match-slc-officers-pay-scale-slc-council-hears-input-about-increase"
-    html = requests.get(url).text
-    fulltext = fulltext(html)
-
-    print(fulltext)
-    """
     
 
     

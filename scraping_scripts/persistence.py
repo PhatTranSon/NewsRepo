@@ -55,7 +55,8 @@ class RDSPersistence(Persistence):
                 image VARCHAR(500),
                 text TEXT,
                 authors TEXT,
-                url VARCHAR(500)
+                url VARCHAR(500),
+                date DATE
             )
         """)
 
@@ -66,9 +67,9 @@ class RDSPersistence(Persistence):
         cursor = mydb.cursor()
 
         # Iterate through articles, add them to db
-        sql = "INSERT INTO articles VALUES (DEFAULT, %s, %s, %s, %s, %s)"
+        sql = "INSERT INTO articles VALUES (DEFAULT, %s, %s, %s, %s, %s, %s)"
         for article in news_articles:
-            values = (article.title, article.image, article.text, article.authors, article.url)
+            values = (article.title, article.image, article.text, article.authors, article.url, article.date)
             cursor.execute(sql, values)
 
         # Commit transaction
