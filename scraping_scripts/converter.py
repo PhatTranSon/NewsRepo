@@ -1,4 +1,6 @@
 from abc import abstractmethod
+from newspaper.api import fulltext
+import requests
 from article import NewsArticle
 
 class Converter:
@@ -14,12 +16,22 @@ class NewsArticleConverter(Converter):
         item.download()
         item.parse()
 
+        # Get the text
+        html = requests.get(item.url).text
+        text = fulltext(html)
+
+        print("URL: " + item.url)
+        print(text)
+        print("_____________________")
+
         # Convert to news article object
-        news_article = NewsArticle(item.top_image, item.text, item.title, ", ".join(item.authors), item.url)
-        return news_article
+        news_article = NewsArticle(item.top_image, text, item.title, ", ".join(item.authors), item.url)
+        return None if text is None or len(text) == 0 else news_article
 
     def convert(self, items):
         converted = []
         for item in items:
-            converted.append(self.convert_one(item))
+            article = self.convert_one(item)
+            if article:
+                converted.append(article)
         return converted

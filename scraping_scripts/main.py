@@ -1,19 +1,30 @@
-import mysql.connector
-import boto3
-from article import NewsArticle
 from persistence import RDSPersistence
+from converter import NewsArticleConverter
+from scraper import NewsArticleScraper
+from autoscraper import AutoScraper
+import requests
+from newspaper import Article, fulltext
 
 # Main
 if __name__ == "__main__":
-    # Create some articles
-    articles = [
-        NewsArticle("http://google.com", "Hello World", "The End is There", "John C. Ena", "http://google.com"),
-        NewsArticle("http://google.com", "Hello New World", "The End is Now", "John C. Ena", "http://google.com")
-    ]
+    
+    # Create auto scraper
+    scraper = AutoScraper(
+        NewsArticleScraper(),
+        NewsArticleConverter(),
+        RDSPersistence()
+    )
 
-    # Insert to db
-    persistence = RDSPersistence()
-    persistence.save(articles)
+    # Run
+    scraper.run()
+    """
+    url = "https://www.fox13now.com/news/local-news/wvc-police-to-match-slc-officers-pay-scale-slc-council-hears-input-about-increase"
+    html = requests.get(url).text
+    fulltext = fulltext(html)
+
+    print(fulltext)
+    """
+    
 
     
 

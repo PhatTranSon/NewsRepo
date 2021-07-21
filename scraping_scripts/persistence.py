@@ -53,8 +53,8 @@ class RDSPersistence(Persistence):
                 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
                 title VARCHAR(255),
                 image VARCHAR(500),
-                text VARCHAR(3000),
-                authors VARCHAR(100),
+                text TEXT,
+                authors TEXT,
                 url VARCHAR(500)
             )
         """)

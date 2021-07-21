@@ -13,7 +13,6 @@ class Scraper:
 class NewsArticleScraper(Scraper):
     def __init__(self):
         self.publishers = [
-            "http://cbs.com",
             "https://www.nytimes.com",
             "https://apnews.com/"
         ]
