@@ -17,7 +17,7 @@ class NewsArticleScraper(Scraper):
             "https://apnews.com/"
         ]
 
-    def scrape(self, only_new=False):
+    def scrape(self, only_new=True):
         arcticles = []
 
         for publisher in self.publishers:
