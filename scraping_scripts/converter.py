@@ -17,25 +17,28 @@ class NewsArticleConverter(Converter):
         item.parse()
 
         # Get the text
-        html = requests.get(item.url).text
-        text = fulltext(html)
+        try:
+            html = requests.get(item.url).text
+            text = fulltext(html)
 
-        print(item.title)
-        print("________________")
+            print(item.title)
+            print("_____________________________________")
 
-        # Get the published date
-        publish_date = item.publish_date.strftime("%Y-%m-%d") if item.publish_date else None
+            # Get the published date
+            publish_date = item.publish_date.strftime("%Y-%m-%d") if item.publish_date else None
 
-        # Convert to news article object
-        news_article = NewsArticle(
-            item.top_image,
-            text, 
-            item.title, 
-            ", ".join(item.authors), 
-            item.url,
-            publish_date
-        )
-        return None if text is None or len(text) == 0 else news_article
+            # Convert to news article object
+            news_article = NewsArticle(
+                item.top_image,
+                text, 
+                item.title, 
+                ", ".join(item.authors), 
+                item.url,
+                publish_date
+            )
+            return None if text is None or len(text) == 0 else news_article
+        except Exception:
+            return None
 
     def convert(self, items):
         converted = []
