@@ -1,11 +1,11 @@
-import { Sequelize } from "sequelize";
-import NewsModel from "./news.model";
+const { Sequelize } = require("sequelize");
+const NewsModel = require("../models/news.model");
 
 //Get the variables
-const dbName = process.env.DB_NAME;
-const dbUser = process.env.DB_USER;
-const dbPassword = process.env.DB_PASSWORD;
-const dbHost = process.env.DB_HOST;
+const dbName = process.env.DB_NAME || "newsrepo_db";
+const dbUser = process.env.DB_USER || "root";
+const dbPassword = process.env.DB_PASSWORD || "Rm!t2012781357";
+const dbHost = process.env.DB_HOST || "localhost";
 
 //Create sequelize object
 const sequelize = new Sequelize(dbName, dbUser, dbPassword, {
@@ -24,5 +24,5 @@ const modelDefiners = [
 modelDefiners.forEach(modelDefiner => modelDefiner(sequelize));
 
 //Export model
-export default sequelize;
+module.exports = sequelize;
 

@@ -1,5 +1,5 @@
-import express from "express";
-import NewsRouter from "../routes/news.route.mjs";
+const express = require("express");
+const NewsRouter = require("../routes/news.route");
 
 //Create express application
 const app = express();
