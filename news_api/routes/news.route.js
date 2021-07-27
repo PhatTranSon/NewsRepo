@@ -1,12 +1,13 @@
 const express = require("express");
 const {
-    getNews
+    getAllNews, getOneNews
 } = require("../controllers/news.controller");
 
 //Create simple router
 const router = express.Router();
 
 //Add path
-router.get("/", getNews);
+router.get("/:newsId", getOneNews)
+router.get("/", getAllNews);
 
 module.exports = router;

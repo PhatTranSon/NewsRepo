@@ -24,5 +24,8 @@ const modelDefiners = [
 modelDefiners.forEach(modelDefiner => modelDefiner(sequelize));
 
 //Export model
-module.exports = sequelize;
+module.exports = {
+    sequelize,
+    Sequelize
+}
 
