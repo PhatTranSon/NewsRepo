@@ -5,6 +5,13 @@ const ErrorHandling = require("../middlware/error_handling");
 //Create express application
 const app = express();
 
+//Basic route for introducing the application
+app.get("/about", (req, resp) => {
+    resp.status(200).json({
+        about: "This is an RestAPI written to serve news articles scraped from multiple sources. For more information, please visit https://github.com/PhatTranSon/NewsRepo"
+    });
+});
+
 //Basic routing for news
 app.use("/news", ErrorHandling(NewsRouter));
 
