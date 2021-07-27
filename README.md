@@ -26,7 +26,7 @@ This project is a simple web application which allows English learners to read E
 To be updated
 
 ### NewsAPI
-Routes:
+Current url: http://newsapienvironment.eba-22ispnus.us-east-2.elasticbeanstalk.com/
 ```
 /about
 ```
