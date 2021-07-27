@@ -11,7 +11,8 @@ This project is a simple web application which allows English learners to read E
 - Test yourself on saved words
 
 ## Phases
-- [ ] News article scraping scripts
+- [x] News article scraping scripts
+- [x] News API 
 - [ ] Backend
 - [ ] Frontend
 
@@ -26,15 +27,15 @@ To be updated
 
 ### NewsAPI
 Routes:
-'''
+```
 /about
-'''
+```
 Display information regarding the API
-'''
+```
 /news/all?limit=..&after_id=..
-'''
+```
 Getting all the news
-'''
+```
 /news/byid?id=[]&id=[]
-'''
+```
 Getting news by id
