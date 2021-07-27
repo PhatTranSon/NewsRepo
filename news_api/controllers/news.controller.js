@@ -36,7 +36,28 @@ const getOneNews = async (req, resp) => {
     }
 }
 
+//Get news by a list of id
+const getByIds = async (req, resp) => {
+    //Get ids
+    const ids = req.query.id;
+
+    //Check if array or not
+    if (!Array.isArray(ids)) {
+        resp.status(400).json({
+            message: "Ids should be in array format"
+        });
+    } else {
+        const news = await models.article.findAll({
+            where: {
+                id: ids
+            }
+        });
+        resp.status(200).json(news);
+    }
+}
+
 module.exports = {
     getAllNews,
-    getOneNews
+    getOneNews,
+    getByIds
 }
