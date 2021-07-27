@@ -1,2 +1,4 @@
 scraping_scripts/venv
 scraping_scripts/__pycache__
+news_api/node_modules
+news_api/package-lock.json
