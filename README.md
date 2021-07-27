@@ -36,6 +36,6 @@ Display information regarding the API
 ```
 Getting all the news
 ```
-/news/byid?id=[]&id=[]
+/news/byid?id[]=1&id[]=30
 ```
 Getting news by id
