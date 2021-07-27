@@ -11,14 +11,30 @@ This project is a simple web application which allows English learners to read E
 - Test yourself on saved words
 
 ## Phases
-- [] News article scraping scripts
-- [] Backend
-- [] Frontend
+- [ ] News article scraping scripts
+- [ ] Backend
+- [ ] Frontend
 
 ### News scraping
-- [] Create RDS instance to save the news
-- [] Create AWS Lambda scripts to read news and save into RDS database
-- [] Schedule News scraping process using CloudWatch
+- [x] Create RDS instance to save the news
+- [x] Create AWS Lambda scripts to read news and save into RDS database
+- [x] Create NewsAPI to serve the news
 
 ## Structure
-To be added later
+### App 
+To be updated
+
+### NewsAPI
+Routes:
+'''
+/about
+'''
+Display information regarding the API
+'''
+/news/all?limit=..&after_id=..
+'''
+Getting all the news
+'''
+/news/byid?id=[]&id=[]
+'''
+Getting news by id
