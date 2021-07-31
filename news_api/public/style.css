@@ -1,0 +1,70 @@
+/* Google font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* Reset */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+/* Font family and font size */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+/* Main section*/
+main {
+    width: 50%;
+    margin: 0 auto;
+}
+
+/* Title and subtitle */
+.title, .subtitle, .smalltitle {
+    color: #e76f51;
+}
+
+.title {
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.subtitle {
+    font-size: 2rem;
+}
+
+.smalltitle {
+    font-size: 1.5rem;
+}
+
+/* Code block and bean */
+.code-block {
+    background-color: #d3d3d3;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.bean {
+    padding: 2px 5px;
+    background-color: #2a9d8f;
+    color: white;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+}
+
+/* Param list */
+.params {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.params li {
+    margin-bottom: 1rem;
+}

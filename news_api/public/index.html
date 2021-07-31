@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="shortcut icon" href="/fav.png">
+    <title>NewsAPI</title>
+</head>
+<body>
+    <main>
+        <h1 class="title">NewsRepo API</h1>
+
+        <section class="about">
+            <h2 class="subtitle">About</h2>
+            <p>
+                NewsRepo is a free-to-use RESTful API to retrieving news from authoritative sources such as the New York Times or APNews
+            </p>
+        </section>
+
+        <section class="how">
+            <h2 class="subtitle">How to use</h2>
+            <p>
+                There are several ways the application can be used with several endpoints
+            </p>
+
+            <h3 class="smalltitle">Gather all news</h3>
+            <p class="code-block">
+                https://articlesfinder.net/news/all/?limit=10&after_id=0
+            </p>
+            <p class="explain">
+                This endpoint retrieves all the news scraped by our API
+                <ul class="params">
+                    <li><span class="bean">limit</span>: (Integer) The number of news articles required</li>
+                    <li><span class="bean">after_id</span>: (Integer) Gather news after this id only (news have id from 1 to ...)</li>
+                </ul>
+            </p>
+
+            <h3 class="smalltitle">Gather news by id</h3>
+            <p class="code-block">
+                https://articlesfinder.net/news/byid?id[]=1&id[]=3&id[]=...
+            </p>
+            <p class="explain">
+                This endpoint retrieves all the news by ids
+                <ul class="params">
+                    <li><span class="bean">id</span>: (Array) The ids of news articles</li>
+                </ul>
+            </p>
+        </section>
+
+        <section class="disclaimer">
+            <h2 class="subtitle">Disclaimer</h2>
+            Since all the news are collected from The New York Times and APNews using scraping techniques, the API is unavailable for commericial use.
+        </section>
+        
+        <section class="contact">
+            <h2 class="subtitle">Contact</h2>
+            <p>The Github for the project is located at <a href="https://github.com/PhatTranSon/NewsRepo">Github</a></p>
+        </section>
+    </main>
+</body>
+</html>

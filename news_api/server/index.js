@@ -1,9 +1,13 @@
 const express = require("express");
+const path = require("path");
 const NewsRouter = require("../routes/news.route");
 const ErrorHandling = require("../middlware/error_handling");
 
 //Create express application
 const app = express();
+
+//API homepage
+app.use(express.static("public"));
 
 //Basic route for introducing the application
 app.get("/about", (req, resp) => {
