@@ -12,9 +12,7 @@ This project is a simple web application which allows English learners to read E
 
 ## Phases
 - [x] News article scraping scripts
-- [x] News API 
-- [ ] Backend
-- [ ] Frontend
+- [x] News API
 
 ### News scraping
 - [x] Create RDS instance to save the news
@@ -26,7 +24,7 @@ This project is a simple web application which allows English learners to read E
 To be updated
 
 ### NewsAPI
-Current url: http://newsapienvironment.eba-22ispnus.us-east-2.elasticbeanstalk.com/
+Current url: https://articlesfinder.net
 ```
 /about
 ```
