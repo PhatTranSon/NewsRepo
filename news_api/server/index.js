@@ -2,9 +2,13 @@ const express = require("express");
 const path = require("path");
 const NewsRouter = require("../routes/news.route");
 const ErrorHandling = require("../middlware/error_handling");
+const cors = require("cors");
 
 //Create express application
 const app = express();
+
+//Use cors
+app.use(cors());
 
 //API homepage
 app.use(express.static("public"));
